@@ -1,8 +1,0 @@
-package com.balu.gl.cutomer.relationship.management.controller;
-
-import org.springframework.stereotype.Controller;
-
-@Controller
-public class CustomerRelationshipController {
-
-}
