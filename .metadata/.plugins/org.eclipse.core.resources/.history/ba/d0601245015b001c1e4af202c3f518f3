@@ -1,0 +1,5 @@
+package com.balu.gl.customer.relationship.management.config;
+
+public class SwaggerConfig {
+
+}

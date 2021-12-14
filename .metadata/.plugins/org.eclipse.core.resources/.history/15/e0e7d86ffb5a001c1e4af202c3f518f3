@@ -1,0 +1,24 @@
+package com.balu.gl.cutomer.relationship.management.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.balu.gl.cutomer.relationship.management.entity.Customer;
+
+
+@Controller
+public class CustomerRelationshipController {
+	
+//	@Autowired
+//	private CustomerRepo customerRepo;
+
+	@GetMapping("/list")
+	public Customer listAllCustomers() {
+		Customer cust = new Customer();
+		cust.setCustomerId(1);
+		cust.setFirstName("xyz");
+		cust.setEmail("emai@xyz.com");
+		return cust;
+	}
+}

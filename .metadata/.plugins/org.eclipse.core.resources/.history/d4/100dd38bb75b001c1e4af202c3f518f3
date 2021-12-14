@@ -1,0 +1,50 @@
+package com.balu.gl.cutomer.relationship.management.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.balu.gl.cutomer.relationship.management.entity.Customer;
+import com.balu.gl.cutomer.relationship.management.service.CustomerService;
+
+@Controller
+public class CustomerRelationshipController {
+
+	@Autowired
+	private CustomerService customerService;
+
+	@GetMapping("/listCustomers")
+	@ResponseBody
+	public List<Customer> listAllCustomers() {
+		return customerService.getAllCustomers();
+	}
+
+	@PostMapping("/addCustomer")
+	public Customer addCustomer(@RequestParam Long customerId, @RequestParam String firstName,
+			@RequestParam String lastName, @RequestParam String email) {
+
+		return customerService.addOrUpdateCustomer(customerId, firstName, lastName, email);
+
+	}
+	
+	@PutMapping("/updateCustomer")
+	public Customer updateCustomer(@RequestParam Long customerId, @RequestParam String firstName,
+			@RequestParam String lastName, @RequestParam String email) {
+
+		return customerService.addOrUpdateCustomer(customerId, firstName, lastName, email);
+
+	}
+	
+	@DeleteMapping("/deleteCustomer")
+	public void deleteCustomer(Long customerId) {
+		customerService.deleteCustomer(customerId);
+	}
+}

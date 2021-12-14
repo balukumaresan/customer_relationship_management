@@ -1,0 +1,5 @@
+package com.balu.gl.cutomer.relationship.management.controller;
+
+public class CustomerRelationshipController {
+
+}

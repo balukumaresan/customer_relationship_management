@@ -1,0 +1,13 @@
+package com.balu.gl.cutomer.relationship.management.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.balu.gl.cutomer.relationship.management.dao.CustomerRepo;
+
+@Service
+public class CustomerService {
+
+	@Autowired
+	private CustomerRepo custRepo;
+}

@@ -1,0 +1,20 @@
+package com.balu.gl.cutomer.relationship.management.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.balu.gl.cutomer.relationship.management.dao.CustomerRepo;
+
+@Controller
+@RequestMapping("/customer")
+public class CustomerRelationshipController {
+	
+//	@Autowired
+//	private CustomerRepo customerRepo;
+
+	@RequestMapping("/list")
+	public String listAllCustomers() {
+		return "Success";
+	}
+}

@@ -1,0 +1,5 @@
+package com.balu.gl.cutomer.relationship.management.service;
+
+public class CustomerService {
+
+}

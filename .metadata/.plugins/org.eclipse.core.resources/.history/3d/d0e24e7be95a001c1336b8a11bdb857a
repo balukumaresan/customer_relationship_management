@@ -1,0 +1,10 @@
+package com.balu.gl.cutomer.relationship.management.entity;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+public class Customer {
+
+}

@@ -1,0 +1,24 @@
+package com.balu.gl.cutomer.relationship.management.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.balu.gl.cutomer.relationship.management.dao.CustomerRepo;
+import com.balu.gl.cutomer.relationship.management.entity.Customer;
+
+@Service
+public class CustomerService {
+
+	@Autowired
+	private CustomerRepo custRepo;
+	
+	public List<Customer> getAllCustomers() {
+		return custRepo.findAll();
+	}
+	
+	public Customer findById(long customerId) {
+		return custRepo.findById(customerId);
+	}
+}

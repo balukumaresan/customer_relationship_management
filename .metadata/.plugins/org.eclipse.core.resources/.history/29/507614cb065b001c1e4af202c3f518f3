@@ -1,0 +1,14 @@
+package com.balu.gl.cutomer.relationship.management.dao;
+
+import java.util.List;
+
+import com.balu.gl.cutomer.relationship.management.entity.Customer;
+
+public interface CustomerRepo {
+
+	public List<Customer> findall();
+	public Customer findById(int customerId);
+	public int deleteById(int customerId);
+	public int save(Customer customer);
+	public int update(Customer customer);
+}

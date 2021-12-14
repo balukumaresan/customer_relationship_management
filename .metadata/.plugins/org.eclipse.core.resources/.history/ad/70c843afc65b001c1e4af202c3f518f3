@@ -1,0 +1,45 @@
+package com.balu.gl.cutomer.relationship.management.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.balu.gl.cutomer.relationship.management.dao.CustomerRepo;
+import com.balu.gl.cutomer.relationship.management.entity.Customer;
+
+@Service
+public class CustomerServiceimpl  implements CustomerService{
+
+	@Autowired
+	private CustomerRepo custRepo;
+	
+	public List<Customer> getAllCustomers() {
+		return custRepo.findAll();
+	}
+	
+	public Optional<Customer> findById(long customerId) {
+		return custRepo.findById(customerId);
+	}
+	
+	public Customer addOrUpdateCustomer(Long customerId, String firstName, String lastName,
+			String email) {
+		Customer cust = new Customer();
+		cust.setFirstName(firstName);
+		cust.setLastName(lastName);
+		cust.setEmail(email);
+		cust.setCustomerId(customerId);
+		return custRepo.save(cust);
+	}
+	
+//	public Customer updateCustomer(Customer customer) {
+//		return custRepo.save(customer);
+//	}
+	
+	public void deleteCustomer(Long custId) {
+		Optional<Customer> cust = custRepo.findById(custId);
+		custRepo.delete(cust.get());
+	}
+}
